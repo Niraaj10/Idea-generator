@@ -40,7 +40,7 @@ const generatePromptResponse = async (req, res) => {
         const aiResponse = dummyResponse; //for dummy responses
 
 
-        //Using RapidApi for AI response generation
+        // Using RapidApi for AI response generation
         // const options = {
         //     method: 'POST',
         //     url: 'https://open-ai21.p.rapidapi.com/chatgpt',
@@ -65,15 +65,15 @@ const generatePromptResponse = async (req, res) => {
         //     return res.status(response.status).json({ error: "Failed to generate response using RapidAPI." });
         // }
 
-        // console.log(response.data.result)
+        // // console.log(response.data.result)
         // const aiResponse = response.data.result || dummyResponse;
 
         // Save to MongoDB
         const newResponse = await Response.create({
             prompt,
-            response: aiResponse
+            response: aiResponse,
         });
-
+    
         if (!newResponse) {
             return res.status(500).json({ error: "Something went wrong creating newResponse." });
         }
