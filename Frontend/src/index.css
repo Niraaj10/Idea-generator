@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+
+.rubik {
+  font-family: "Rubik", serif;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+* {
+    font-family: "Courier New", Courier, monospace;
+}
+
+.response-text {
+    font-family: "Courier New", Courier, monospace;
+    white-space: pre-wrap; 
+}
+
+
+@keyframes blurAnimation {
+    0% {
+      filter: blur(10px);
+      opacity: 0;
+    }
+    100% {
+      filter: blur(0);
+      opacity: 1;
+    }
+  }
+  
+  .blur-effect {
+    animation: blurAnimation 1s ease-in-out;
+  }
+
+  .frosted-glass {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px; /* Optional, for rounded corners */
+    background: rgba(255, 255, 255, 0.3); /* Semi-transparent background */
+  }
+  
+  .frosted-glass::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    backdrop-filter: blur(15px); /* This applies the blur effect */
+    z-index: -1; /* Ensures the content stays on top of the blurred background */
+  }
+
+
